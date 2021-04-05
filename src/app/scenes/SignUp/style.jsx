@@ -23,6 +23,7 @@ const signupStyle = (theme) => ({
   topContainer: {
     alignItems: "center",
     height: "200px",
+    padding: "40px",
     display: "flex",
     justifyContent: "center",
     backgroundColor: "#001b30",

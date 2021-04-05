@@ -10,8 +10,13 @@ const dashboardStyle = (theme) => ({
       flexShrink: 0,
     },
   },
+  userAccount: {
+    background: "#001b30",
+  },
+  listItem: {
+    color: "#001b30",
+  },
   appBar: {
-    zIndex: -1,
     background: "#fff",
     [theme.breakpoints.up("sm")]: {
       width: `calc(100% - ${drawerWidth}px)`,
@@ -25,10 +30,13 @@ const dashboardStyle = (theme) => ({
     display: "flex",
     justifyContent: "space-between",
   },
-  // necessary for content to be below app bar
   toolbar: theme.mixins.toolbar,
   drawerPaper: {
     width: drawerWidth,
+  },
+  topConatiner: {
+    display: "flex",
+    justifyContent: "center",
   },
   content: {
     flexGrow: 1,

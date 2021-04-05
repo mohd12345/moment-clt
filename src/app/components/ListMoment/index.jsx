@@ -66,10 +66,17 @@ export default function MomentTable(props) {
     const limit = rowsPerPage;
     const skip = page * limit;
     getMoments({ limit, skip }).then((response) => {
-      response.json().then((data) => {
-        setMoment(data.data.moments);
-        setTotal(data.data.total);
-      });
+      if (response.status === 200) {
+        response.json().then((data) => {
+          setMoment(data.data.moments);
+          setTotal(data.data.total);
+        });
+      }
+      if (response.status === 403) {
+        localStorage.removeItem("isAuthenticated");
+        localStorage.removeItem("token");
+        props.history.push("/");
+      }
     });
   }, [page, rowsPerPage, refetch]);
 

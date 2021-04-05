@@ -20,3 +20,8 @@
 .App-link {
   color: #09d3ac;
 }
+
+.css-nvf14r-ToastContainer {
+  /* top: 59px; */
+  z-index: 99999 !important;
+}

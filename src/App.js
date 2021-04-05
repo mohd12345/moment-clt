@@ -6,7 +6,7 @@ import { ToastProvider } from "react-toast-notifications";
 
 function App(props) {
   return (
-    <ToastProvider>
+    <ToastProvider autoDismissTimeout={5000}>
       <Router>
         <Routes />
       </Router>

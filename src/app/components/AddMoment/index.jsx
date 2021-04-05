@@ -87,9 +87,7 @@ export default function AddMoment({
       } else {
         result = await createMoment(moment);
       }
-      console.log(result, selectedMoment);
       if (result.status === 200) {
-        console.log(selectedMoment);
         addToast(selectedMoment ? "Moment updated" : "A new moment added", {
           appearance: "success",
           autoDismiss: true,

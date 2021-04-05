@@ -8,7 +8,7 @@ import Box from "@material-ui/core/Box";
 import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
-import Logo from "../../../images/5d.png";
+import Logo from "../../../images/5d1.png";
 import { IconButton, InputAdornment } from "@material-ui/core";
 import {
   HomeOutlined,
@@ -47,7 +47,7 @@ export default function SignUp(props) {
 
   const handleSubmit = async () => {
     try {
-      const result = await registerUser(userDetails);
+      await registerUser(userDetails);
       props.history.push("/");
     } catch (err) {
       console.log(err);
@@ -57,7 +57,9 @@ export default function SignUp(props) {
   return (
     <>
       <Box className={classes.topContainer}>
-        <img alt="5D logo" height="130" width="130" src={Logo} />
+        <Box>
+          <img alt="5D logo" height="100" width="130" src={Logo} />
+        </Box>
       </Box>
       <Box className={classes.middleConatiner}>
         <Container component="main" maxWidth="sm">

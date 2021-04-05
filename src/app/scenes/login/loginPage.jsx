@@ -22,7 +22,7 @@ import { Redirect } from "react-router-dom";
 import { useToasts } from "react-toast-notifications";
 import { loginStyles } from "./style";
 import { loginUser } from "../../services/user";
-import Logo from "../../../images/5d.png";
+import Logo from "../../../images/5d1.png";
 
 function SignIn(props) {
   const { classes } = props;
@@ -68,7 +68,7 @@ function SignIn(props) {
   return (
     <>
       <Box className={classes.topContainer}>
-        <img alt="5D logo" height="130" width="130" src={Logo} />
+        <img alt="5D logo" height="100" width="130" src={Logo} />
       </Box>
       <Box className={classes.middleConatiner}>
         <Container component="main" maxWidth="xs">

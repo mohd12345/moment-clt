@@ -6,18 +6,17 @@ import Divider from "@material-ui/core/Divider";
 import Drawer from "@material-ui/core/Drawer";
 import Hidden from "@material-ui/core/Hidden";
 import IconButton from "@material-ui/core/IconButton";
-import InboxIcon from "@material-ui/icons/MoveToInbox";
 import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
-import MailIcon from "@material-ui/icons/Mail";
 import MenuIcon from "@material-ui/icons/Menu";
 import Toolbar from "@material-ui/core/Toolbar";
 import { makeStyles, useTheme } from "@material-ui/core/styles";
-import { Menu, MenuItem } from "@material-ui/core";
+import { Box, Menu, MenuItem } from "@material-ui/core";
 import { AccountCircleSharp } from "@material-ui/icons";
-
+import ListIcon from "@material-ui/icons/List";
+import AddCircleIcon from "@material-ui/icons/AddCircle";
 import Logo from "../../../images/5d.png";
 import MomentList from "../../components/ListMoment";
 import AddMoment from "../../components/AddMoment";
@@ -57,7 +56,9 @@ function Dashboard(props) {
 
   const drawer = (
     <div>
-      <img height="200" width="200" src={Logo} />
+      <Box className={classes.topConatiner}>
+        <img alt="5D logo" height="150" width="150" src={Logo} />
+      </Box>
       <Divider />
       <List>
         {["Moment list", "Add new moment"].map((text, index) => (
@@ -69,8 +70,8 @@ function Dashboard(props) {
               setSelectedMoment(null);
             }}
           >
-            <ListItemIcon>
-              {index % 2 === 0 ? <MailIcon /> : <InboxIcon />}
+            <ListItemIcon className={classes.listItem}>
+              {index % 2 === 0 ? <ListIcon /> : <AddCircleIcon />}
             </ListItemIcon>
             <ListItemText primary={text} />
           </ListItem>
@@ -96,6 +97,7 @@ function Dashboard(props) {
             <MenuIcon />
           </IconButton>
           <IconButton
+            className={classes.userAccount}
             edge="end"
             aria-label="account of current user"
             aria-haspopup="true"
